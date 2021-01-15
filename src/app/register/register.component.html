@@ -1,0 +1,70 @@
+<!-- Default form register -->
+
+<div class="login-wrapper w-clearfix" role="document">
+        <!-- <div *ngIf="isLoading">
+            <app-header></app-header>
+          </div> -->
+          <div class="login-form">
+<form class="text-center" action="#!" [formGroup]="RegisterForm" (ngSubmit)="OnSignIn()">
+
+    <p class="h4 mb-4">Register</p>
+
+    <div class="form-group">
+        <input type="text" formControlName="username" name="UserName" id="defaultRegisterFormFirstName" 
+            class="form-control" [(ngModel)]="register.user_Name" placeholder="User name" 
+            [ngClass]="{ 'is-invalid': submitted && f.username.errors}" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+            <!-- Last name -->  
+    <!-- E-mail -->
+    <div class="form-group">
+        <input type="email" formControlName="Email" name="email" id="defaultRegisterFormEmail" 
+            class="form-control" [(ngModel)]="register.email" placeholder="E-mail" 
+                (ngModelChange)="onChangeEmail($event)" [ngClass]="{ 'is-invalid': submitted && f.Email.errors}"/>
+        <!-- aria-describedby="emailHelp" required -->
+        <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+            <div *ngIf="f.Email.errors.required">Email is required</div>
+        </div>
+    </div>
+    <!-- Password -->
+    <div class="form-group">
+        <input type="password" formControlName="password" name="password" id="defaultRegisterFormPassword" 
+            class="form-control" placeholder="Password" [(ngModel)]="register.password" 
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors}"/>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+            At least 8 characters and 1 digit (At max 10 characters)
+        </small>
+    </div>
+
+    <!-- Phone number -->
+    <div class="form-group">
+        <input type="text" formControlName="Mobile_Number" name="Mobile_Number" id="defaultRegisterPhonePassword" 
+            class="form-control" placeholder="Phone number" [(ngModel)]="register.mobile_Number" 
+            [ngClass]="{ 'is-invalid': submitted && f.Mobile_Number.errors}"/>
+        <div *ngIf="submitted && f.Mobile_Number.errors" class="invalid-feedback">
+            <div *ngIf="f.Mobile_Number.errors.required">Phone Number is required</div>
+        </div>
+        <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+            Dont Include +91 in the phone number
+        </small>
+    </div>
+    <!-- <div class="form-group"> -->
+            <button class="btn btn-info my-4 btn-primary" type="submit">Sign Up</button>
+            <a [routerLink]="['/Sign In']" class="btn-link">Cancel</a>
+            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            <!-- <p>
+                <a class="btn btn-info my-4 btn-block" role="button" aria-pressed="true"[routerLink]="['/Sign In']">BACK</a>
+            <a  [routerLink]="['/Sign In']">Register</a>
+        </p> -->
+    <!-- </div> -->
+</form>
+<div class="flex-logo"></div>
+</div>
+</div>
+
+<!-- Default form register -->

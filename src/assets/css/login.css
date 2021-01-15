@@ -1,0 +1,53 @@
+.center-fit {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+}
+.login-form {
+    width: 500px;
+    padding: 20px;
+    float: right;
+    border-color: rgba(0, 0, 0, .35);
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, .6);
+    box-shadow: none;
+  }
+
+  .login-wrapper {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-image: url('/assets/Images/Library-b.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .flex-logo {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-image: url('/assets/Images/flex_logo.png');
+    background-position: 50% 100%;
+    background-size: 70px;
+    background-repeat: no-repeat;
+  }

@@ -1,0 +1,74 @@
+<!-- <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+        <div class="modal-content"> -->
+            <div *ngIf="BookModal.book_Name">
+            <div class="modal-header" style="background-color: rgb(94, 170, 245);" >
+                <!-- <i class="fa fa-book"></i> -->
+                <h4 class="modal-title">{{BookModal.book_Name}}
+                    <i class="fa fa-book"></i>
+                </h4>
+                <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+                    <span >&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" >
+                <div class="container">
+                    <div class="row">
+                        <!-- <div class="col-sm"> -->
+                            <img src="/assets/Images/{{BookModal.bookImages}}" style="width: 20%;height: 50;"/>
+                        <!-- </div> -->
+                        <div class="col-lg">
+                            <div class="row">
+                                <div class="col-sm-6">&nbsp;</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4" style="text-align: right">Author:</div>
+                                <div class="col-sm">{{BookModal.author_Name}}</div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4" style="text-align: right">Release Date:</div>
+                                <div class="col-sm">{{BookModal.date_of_release | date: 'dd/MM/yyyy'}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4" style="text-align: right">Rating:</div>
+                                <div class="col-sm-6" *ngIf="BookModal.rating_id">
+                                    <div class="crop"
+                                        [style.width.px]="BookModal.rating_id"
+                                        [title]="title">
+                                    <div style="width: 100px">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4" style="text-align: right">Category:</div>
+                                <div class="col-sm">{{BookModal.booksCategory}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-sm">Book Name: {{Book.book_Name}}</div>
+                    </div> -->
+                    
+                </div>
+            </div>
+            <div class="modal-footer">Do you want to?
+                <div class="row" style="align-content: center;">
+                    <div class="col-sm">
+                        <button type="button" class="btn btn-primary" (click)="Borrow()">Borrow</button>
+                    </div>
+                    <div class="col-sm">
+                        <button type="button" class="btn btn-primary" (click)="Close()">Close</button>
+                    </div>
+                </div>
+            </div>
+        <!-- </div>
+  </div>
+</div> -->
+

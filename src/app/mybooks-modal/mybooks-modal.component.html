@@ -1,0 +1,88 @@
+<!-- <div class="modal fade"> -->
+  <!-- <div class="modal-dialog" role="document"> -->
+        <!-- <div class="modal-content"> -->
+            <div class="modal-header" style="background-color: rgb(94, 170, 245);">
+                <!-- <i class="fa fa-book"></i> -->
+                <h4 class="modal-title">Return
+                    <!-- <i class="fa fa-book"></i> -->
+                </h4>
+                <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+                    <span >&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row" style="vertical-align: middle;text-align: center;"> 
+                        <div class="col-sm" >
+                            Rate this Book :
+                        </div>
+                        <div class="col-sm">
+                            <ngb-rating [(rate)]="currentRate">
+                                <ng-template let-fill="fill" let-index="index">
+                                  <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2" [class.good]="index > 3">&#10038;</span>
+                                </ng-template>
+                              </ngb-rating>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                
+                <!-- <ngb-rating [(rate)]="currentRate">
+                    <ng-template>
+                        <span class="star" style="font-size: 1.5rem;color: #b0c4de;"></span>
+                    </ng-template>
+                </ngb-rating> -->
+                <!-- <div class="container"> -->
+                    
+                    <!-- <div class="row">
+                        <div class="col-sm">Book Name: {{Book.book_Name}}</div>
+                    </div> -->
+                    <!-- <div class="row">
+                        <div class="col-sm-4">Author Name:</div>
+                        <div class="col-sm">{{Book.author_Name}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">Date Of Release:</div>
+                        <div class="col-sm">{{Book.date_of_release | date: 'dd/MM/yyyy'}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">Rating:</div>
+                        <div class="col-sm">{{Book.rating}}</div>
+                    </div> -->
+                        <!-- <div class="col-sm">Date Of Release:</div>
+                        <div class="col-sm">Rating:</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">{{Book.book_Name}}</div>
+                        <div class="col-sm">{{Book.author_Name}}</div>
+                        <div class="col-sm">{{Book.date_of_release}}</div>
+                        <div class="col-sm">{{Book.rating}}</div>
+                    </div> -->
+                     <!-- </div> -->
+                <!-- </div> -->
+                <!-- <div class="row">
+                    <div class="col-sm">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                </div> -->
+            </div>
+            <div class="modal-footer">
+                Do you want to Return this Book?
+                <div class="row" style="align-content: center;">
+                    <!-- <div class="col-lg">
+                        
+                    </div> -->
+                    <div class="col-sm">
+                        <button type="button" class="btn btn-primary" (click)="return()">Yes</button>
+                    </div>
+                    <div class="col-sm">
+                        <button type="button" class="btn btn-primary" (click)="Close()">No</button>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+  <!-- </div> -->
+<!-- </div> -->
+

@@ -1,0 +1,48 @@
+<div class="login w-clearfix">
+<div class="card" style="top: 100px;">
+  <div class="card-body">
+    <div class="tableFixHead">
+      <table class="table table-hover header-fixed">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Book No</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Author Name</th>
+            <th scope="col">Year Of Release</th>
+            <th scope="col">Book Rating</th>
+            <th scope="col">Available Status</th>
+          </tr>
+        </thead>
+        <tbody *ngFor = "let bk of Book" >
+          <tr>
+            <th scope="row" style="font-weight: bold;">{{bk.book_id}}</th>
+            <td >{{bk.book_Name}}</td>
+            <td>{{bk.author_Name}}</td>
+            <td>{{bk.date_of_release | date: 'yyyy'}}</td>
+            <td style="left: 10%;">
+              <app-bookstar style="align-items: center;" [rating]='bk.rating_id' [title]='bk.rating'></app-bookstar>
+            </td>
+            <div class="list-group" *ngIf = "bk.new_Book_Count>3 || bk.new_Book_Count==3">
+              <td><button data-toggle="modal"  data-target="#myModal" type="button" class="btn btn-primary" (click)="OnClick(bk.book_id)">Available</button>
+                <small class="form-text text-muted">Available Books : {{bk.new_Book_Count}}</small>
+              </td>
+            </div>
+            <div class="list-group" *ngIf = "bk.new_Book_Count==0">
+              <td><button type="button" class="btn btn-danger">Occupied</button>
+                <small class="form-text text-muted">All Books are Taken</small>
+              </td>
+            </div>
+            <div class="list-group" *ngIf = "(bk.new_Book_Count<3 || bk.new_Book_Count==2) && bk.new_Book_Count!=0">
+              <td><button  type="button" class="btn btn-warning" (click)="OnClick(bk.book_id)">Limited Books</button>
+                <!-- <app-book-modal></app-book-modal> -->
+                <small class="form-text text-muted">Available Books : {{bk.new_Book_Count}}</small>
+              </td>
+            </div>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

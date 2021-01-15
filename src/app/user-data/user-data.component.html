@@ -1,0 +1,87 @@
+<!-- Navbar -->
+<!-- <div *ngIf="Email"> -->
+    <!-- Navbar -->
+    <div class="userdata-wrapper w-clearfix" role="document">
+          <div class="login-form">
+<form class="text-center" action="#!">
+
+    <p class="h4 mb-4" style="color: white;">Update Account</p>
+    <div class="form-row">
+        <div class="col-sm-3" style="color: white;text-align:end;">
+            UserName :
+        </div>
+        <div class="col-lg">
+            <input type="text" [attr.disabled]="disabled ? '' : null" name="UserName" 
+            id="defaultRegisterFormFirstName" class="form-control mb-4" 
+            [(ngModel)]="Userdata.user_Name" placeholder="User name">
+        </div>
+    </div>
+    <!-- Last name -->  
+    <!-- E-mail -->
+    <div class="form-row">
+        <div class="col-sm-3" style="color: white;text-align:end;">
+            Email ID :
+        </div>
+        <div class="col-lg">
+            <input type="email" [attr.disabled]="disabled ? '' : null" name="email" 
+                id="defaultRegisterFormEmail" class="form-control mb-4" 
+                [(ngModel)]="Userdata.email" placeholder="E-mail" 
+                (ngModelChange)="onChangeEmail($event)" aria-describedby="emailHelp" required>
+        </div>
+    </div>
+    <!-- Password -->
+    <div class="form-row">
+        <div class="col-sm-3" style="color: white;text-align:end;">
+            Password :
+        </div>
+        <div class="col-lg">
+            <input ng-disabled="all" [attr.disabled]="disabled ? '' : null" 
+                type="password" data-toggle="password" name="password" 
+                id="password" class="form-control" placeholder="Password" 
+                [(ngModel)]="Userdata.password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+            <small style="color: white;" id="defaultRegisterFormPasswordHelpBlock" class="form-text mb-4">
+            At least 8 characters and 1 digit (At max 10 characters)
+            </small>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-sm-3" style="color: white;text-align:end;">
+            Mobile No. :
+        </div>
+        <div class="col-lg">
+            <input type="text" [attr.disabled]="disabled ? '' : null" 
+                name="Mobile_Number" id="defaultRegisterPhonePassword" class="form-control" 
+                placeholder="Phone number" [(ngModel)]="Userdata.mobile_Number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+            <small style="color: white;" id="defaultRegisterFormPhoneHelpBlock" class="form-text mb-4">
+                Dont Include +91 in the phone number
+            </small>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#password").password('toggle');
+    </script>
+    <!-- Phone number -->
+    
+    <div class="form-group">
+    <div class="btn-group mr-4" role="group">
+            <button class="btn btn-info my-4 btn-primary" type="submit" (click)="onClick()" >{{disabled ? 'Edit Details' : 'Save' }}</button>
+           
+            <!-- <p>
+                <a class="btn btn-info my-4 btn-block" role="button" aria-pressed="true"[routerLink]="['/Sign In']">BACK</a>
+            <a  [routerLink]="['/Sign In']">Register</a>
+        </p> -->
+    </div>
+    <div class="btn-group">
+        <button *ngIf="disabled==false" class="btn btn-info my-4 btn-primary" type="submit" (click)="onClick()" >Cancel</button>
+    </div>
+</div>
+</form>
+</div>
+    </div>
+<!-- </div> -->
+
+    <!--Main layout-->
+    <!-- </div> -->
+  <!-- <ng-template #elseBlock [routerLink]="['/Sign In']"></ng-template> -->
+    <!--/.Footer-->
+    

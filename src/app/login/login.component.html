@@ -1,0 +1,66 @@
+<!-- <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true"> -->
+  <div class="login-wrapper w-clearfix" role="document">
+  <!-- <div class="col-md-6 offset-md-3 mt-5"> -->
+    <!-- <div *ngIf="isLoading">
+      <app-header></app-header>
+    </div> -->
+    <div class="login-form">
+    <!-- <div class="card"> -->
+      <form class="text-center" action="#!" [formGroup]="loginForm" (ngSubmit)="signIn()">
+      <!-- <div class="card-body"> -->
+        <p class="h4 mb-4">Login</p>
+        <!-- <form [formGroup]="loginForm" (ngSubmit)="signIn()"> -->
+        <!-- Email -->
+          <div class="form-group">
+            <input type="text" id="username" formControlName="username" (ngModelChange)="onChange($event)" 
+              class="form-control" placeholder="E-mail" [(ngModel)]="Login.email" 
+              [ngClass]="{ 'is-invalid': submitted && f.username.errors}" /> 
+            <!-- [(ngModel)]="Login.username" -->
+            <div *ngIf="validEmail" class="invalid-feedback">Invalid Email</div>
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required">Username is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="password" formControlName="password" class="form-control" placeholder="Password" 
+            [(ngModel)]="Login.password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <!-- [(ngModel)]="Login.password" -->
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-around">
+            <div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                    <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                </div>
+            </div>
+            <div>
+              <a class="btn-link" href="">Forgot password?</a>
+            </div>
+          </div>
+          <button class="btn btn-info btn-block my-4" type="submit" (click)="signIn()" >Sign in</button> <!-- type="submit" (click)="signIn()" -->
+          <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+          <div class="d-flex justify-content-around">
+            <p>Not a member?
+              <a class="btn-link" [routerLink]="['/Sign Up']">Register</a>
+            </p>
+        </div>
+    
+        <!-- Social login -->
+        <!-- </form> -->
+      <!-- </div>  -->
+    </form>
+    <div class="flex-logo"></div>
+    </div>
+  </div>
+  
+<!-- </div>
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
+    Modal Login Form</a>
+</div> -->

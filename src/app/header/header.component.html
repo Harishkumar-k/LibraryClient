@@ -1,0 +1,84 @@
+<nav  class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" 
+    *ngIf="user">
+    <div class="container" >
+  
+      <!-- Brand -->
+      <a class="navbar-brand" target="_blank">
+        <strong>Bhodhi Library</strong>
+      </a>
+  
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto" id="navbar">
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" [routerLink]="['/Welcome']">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  style="color: white;" [routerLink]="['/Book']">All Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" [routerLink]="['/My Books']">My Books</a>
+          </li>
+          <div  ngbDropdown class="dropdown">
+            <li>
+            <a class="nav-link dropdown-toggle" id="dropdownMenu1" style="color: white;" ngbDropdownToggle>My Account
+              <div ngbDropdownMenu aria-labelledby="dropdownMenu1" class="custom-dropdown">
+                <a class="nav-link" style="color: white;" [routerLink]="['/My AllBooks']">My Books History</a>
+                <a class="nav-link" style="color: white;" [routerLink]="['/user']">Account Setting</a>
+              </div>
+            </a>
+          <li>
+          </div>
+
+          <!-- </li>
+          <div ngbDropdown class="dropdown">
+            <li class="nav-link dropdown-toggle" id="dropdownMenu1" ngbDropdownToggle>My Account
+              <div ngbDropdownMenu aria-labelledby="dropdownMenu1">
+                <a class="nav-link" [routerLink]="['/user']">My Account</a>
+                <a class="dropdown-item" href="#!">Another action</a>
+              </div>
+            </li> -->
+          <!-- </div> -->
+        </ul>
+        
+        <script>
+            // Add active class to the current button (highlight it)
+            var header = document.getElementById("navbar");
+            var btns = header.getElementsByClassName("nav-item");
+            for (var i = 0; i < btns.length; i++) {
+              btns[i].addEventListener("click", function() {
+              var current = document.getElementsByClassName("active");
+              current[0].className = current[0].className.replace(" active", "");
+              this.className += " active";
+              });
+            }
+        </script>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a  class="nav-link border border-light rounded" style="color: white;" (click)="logout()">
+              <span  class="sr-only">(current)</span>Log Out
+            </a>
+          </li>
+          <li class="nav-item">
+              <a style="color: white;" class="nav-link" [routerLink]="['/user']">{{Email}}</a>
+          </li>
+        </ul>
+  
+      </div>
+  
+    </div>
+  </nav>
